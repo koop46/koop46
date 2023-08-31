@@ -1,5 +1,5 @@
 # Alejandro Martinez
-### Data Science student with Python experience & communicative skills
+### AI & Machine Learning engineer just beginning my career
 
 
 
