@@ -7,8 +7,6 @@
 
 ⚐ Based in Göteborg, Sweden
 
-ϟ Currently building a salary visualization app
-
 
 
  ## Skills
