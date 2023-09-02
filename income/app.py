@@ -1,3 +1,7 @@
+"""
+Streamlit income app
+"""
+
 import pandas as pd
 
 
