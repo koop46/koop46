@@ -9,13 +9,12 @@ import matplotlib.pyplot as plt
 
 df = pd.read_excel("/workspaces/koop46/income/21d.xlsx")
 
-
-
 ages = df.iloc[3:88,1]
 income_classes = [ df.iloc[88+85*n, 0] for n in range(26) ]
 
-MAIN_DF = WOMEN_DF = MEN_DF = median_df = MEDIAN_DF_W = MEDIAN_DF_M = pd.DataFrame( columns = income_classes, index = ages )
-MAIN_DF.index.name = WOMEN_DF.index.name = MEN_DF.index.name = median_df.index.name = MEDIAN_DF_W.index.name = MEDIAN_DF_M.index.name = None
+MAIN_DF = WOMEN_DF = MEN_DF = MEDIAN_DF = MEDIAN_DF_W = MEDIAN_DF_M = pd.DataFrame( columns = income_classes, index = ages )
+MAIN_DF.index.name = WOMEN_DF.index.name = MEN_DF.index.name = None
+MEDIAN_DF.index.name = MEDIAN_DF_W.index.name = MEDIAN_DF_M.index.name = None
 
 
 # #######################################################################
@@ -58,8 +57,17 @@ WOMEN_DF['Totala'] = WOMEN_DF.sum(axis=1)
 
 
 # #######################################################################
-# ###########################  Median DF M & W ##########################
+# ########################  Median DF M, W & All ########################
 # #######################################################################
+
+for (i,data) in enumerate(MEDIAN_DF):
+
+    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 7 ]
+    MEDIAN_DF[data] = col.values
+
+MEDIAN_DF = MEDIAN_DF.replace("..", 0)
+
+
 
 for (i,data) in enumerate(MEDIAN_DF_M):
 
@@ -114,7 +122,8 @@ with st.sidebar:
 
     s_form = st.form("stats_form")
     age = s_form.number_input("Ålder", step=1,min_value=16, max_value=100, value=35)
-    salary = s_form.number_input("Månadslön i tkr", format= "%.1f",step=.5,min_value=0.0, max_value=100.0, value=35.0)
+    salary = s_form.number_input("Månadslön i tkr", format= "%.1f",
+                                 step=.5,min_value=0.0, max_value=100.0, value=35.0)
 
     if s_form.form_submit_button("Klicka"):
         pass
