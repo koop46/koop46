@@ -5,85 +5,16 @@ income app
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+import sqlite3
 
 
-df = pd.read_excel("/workspaces/koop46/income/21d.xlsx")
+##########################################################
+#SQL
+##########################################################
 
-ages = df.iloc[3:88,1]
-income_classes = [ df.iloc[88+85*n, 0] for n in range(26) ]
+cnx = sqlite3.connect('incomes_DB.db')
 
-MAIN_DF = WOMEN_DF = MEN_DF = MEDIAN_DF = MEDIAN_DF_W = MEDIAN_DF_M = pd.DataFrame( columns = income_classes, index = ages )
-MAIN_DF.index.name = WOMEN_DF.index.name = MEN_DF.index.name = None
-MEDIAN_DF.index.name = MEDIAN_DF_W.index.name = MEDIAN_DF_M.index.name = None
-
-
-# #######################################################################
-# ##############################  Main DF  ##############################
-# #######################################################################
-
-for (i,data) in enumerate(MAIN_DF):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 8 ]
-    MAIN_DF[data] = col.values
-
-MAIN_DF = MAIN_DF.replace("..", 0)
-MAIN_DF.loc['Summa'] = MAIN_DF.sum(axis = 0)
-MAIN_DF['Totala'] = MAIN_DF.sum(axis=1)
-
-
-# #######################################################################
-# #######################  Men & Women income DF  #######################
-# #######################################################################
-
-for (i,data) in enumerate(MEN_DF):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 4 ]
-    MEN_DF[data] = col.values
-
-MEN_DF = MEN_DF.replace("..", 0)
-MEN_DF.loc['Summa'] = MEN_DF.sum(axis = 0)
-MEN_DF['Totala'] = MEN_DF.sum(axis=1)
-
-
-
-for (i,data) in enumerate(WOMEN_DF):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 6 ]
-    WOMEN_DF[data] = col.values
-
-WOMEN_DF = WOMEN_DF.replace("..", 0)
-WOMEN_DF.loc['Summa'] = WOMEN_DF.sum(axis = 0)
-WOMEN_DF['Totala'] = WOMEN_DF.sum(axis=1)
-
-
-# #######################################################################
-# ########################  Median DF M, W & All ########################
-# #######################################################################
-
-for (i,data) in enumerate(MEDIAN_DF):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 7 ]
-    MEDIAN_DF[data] = col.values
-
-MEDIAN_DF = MEDIAN_DF.replace("..", 0)
-
-
-
-for (i,data) in enumerate(MEDIAN_DF_M):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 3 ]
-    MEDIAN_DF_M[data] = col.values
-
-MEDIAN_DF_M = MEDIAN_DF_M.replace("..", 0)
-
-
-
-for (i,data) in enumerate(MEDIAN_DF_W):
-
-    col = df.iloc[ 88 + 85 * i:173 + 85 * i, 5 ]
-    MEDIAN_DF_W[data] = col.values
-
-MEDIAN_DF_W = MEDIAN_DF_W.replace("..", 0)
+MAIN_DF = pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
 
 
 
