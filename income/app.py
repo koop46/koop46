@@ -111,5 +111,3 @@ with body:
       #  idx = salarye_index(salary)
        # visualizations(age, salary, idx)
 
-    else:
-        print("Åldrar måste vara 16-100 och månadssalary 1-100")
