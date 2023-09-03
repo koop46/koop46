@@ -12,7 +12,7 @@ import sqlite3
 #SQL
 ##########################################################
 
-cnx = sqlite3.connect('C:\Users\hemli\OneDrive\Dokument\GitHub\Skola\koop46\income\incomes_DB.db')
+cnx = sqlite3.connect('income\incomes_DB.db')
 
 #income tables
 MAIN_DF = pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
