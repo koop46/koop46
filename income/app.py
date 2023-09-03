@@ -7,7 +7,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 
-df = pd.read_excel('21d.xlsx')
+df = pd.read_excel("/workspaces/koop46/income/21d.xlsx")
 
 
 
@@ -89,7 +89,7 @@ body = st.container()
 
 with header:
 
-    st.title("Inkomsttagare per inkomstklass för riket")
+    st.title("Storlek på inkomstklass: Riket")
 
     #Välkomnst graf
     colors_1 = ["darkgreen" for i in range(26)]
@@ -120,7 +120,7 @@ with st.sidebar:
         pass
 
 
-        
+
 with body:
     st.header(f"Födda -{2023-age-1900}, bruttosalary: {int(salary*1000):,} kr")
 
