@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import sqlite3
-import re
 
 
 ##########################################################
@@ -36,24 +35,22 @@ MEDIAN_DF_W = pd.read_sql_query("SELECT * FROM median_w", cnx).set_index(['index
 
 def income_class(monthly_income):
 
-    inc_class_names = [c for c in MAIN_DF.iloc[:, 1:-2]] 
     yearly_income = monthly_income * 12
 
-    if monthly_income == 0: income_interval = "0"
-        
+    if monthly_income == 0: income_interval = "0"        
     elif monthly_income > 83: income_interval = "1000+ tkr"
 
     else:
-        for col in inc_class_names:
-            income_range = list(filter(None, re.split("-| tkr|\+ tkr| [\s_+]| ", col)))
+        for col in MAIN_DF.iloc[:, 1:-2]: #loop through column names / maybe switch to list with names?
+            income_range = col[:-4].split("-")
 
             if int(income_range[0]) <= yearly_income <= int(income_range[1]):
                 income_interval = f"{income_range[0]}-{income_range[1]} tkr"
                 break
 
-    return MAIN_DF.columns.get_loc(income_interval) #return index of interval
+    class_idx = MAIN_DF.columns.get_loc(income_interval) #return income class index
+    return class_idx
 
-income_class(83)
 
 
 
