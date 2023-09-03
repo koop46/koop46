@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import sqlite3
+import re
 
 
 ##########################################################
@@ -14,7 +15,46 @@ import sqlite3
 
 cnx = sqlite3.connect('incomes_DB.db')
 
+#income tables
 MAIN_DF = pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
+
+MEN_DF_ = pd.read_sql_query("SELECT * FROM incomes_m", cnx).set_index(['index'])
+
+WOMEN_DF = pd.read_sql_query("SELECT * FROM incomes_w", cnx).set_index(['index'])
+
+#median tables
+MEDIAN_DF = pd.read_sql_query("SELECT * FROM medians", cnx).set_index(['index'])
+
+MEDIAN_DF_M = pd.read_sql_query("SELECT * FROM median_m", cnx).set_index(['index'])
+
+MEDIAN_DF_W = pd.read_sql_query("SELECT * FROM median_w", cnx).set_index(['index'])
+
+
+##########################################################
+#Functions
+##########################################################
+
+def income_class(monthly_income):
+
+    inc_class_names = [c for c in MAIN_DF.iloc[:, 1:-2]] 
+    yearly_income = monthly_income * 12
+
+    if monthly_income == 0: income_interval = "0"
+        
+    elif monthly_income > 83: income_interval = "1000+ tkr"
+
+    else:
+        for col in inc_class_names:
+            income_range = list(filter(None, re.split("-| tkr|\+ tkr| [\s_+]| ", col)))
+
+            if int(income_range[0]) <= yearly_income <= int(income_range[1]):
+                income_interval = f"{income_range[0]}-{income_range[1]} tkr"
+                break
+
+    return MAIN_DF.columns.get_loc(income_interval) #return index of interval
+
+income_class(83)
+
 
 
 
