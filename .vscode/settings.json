@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 86,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:koop46}/income/incomes_DB.db",
+            "name": "incomes"
+        }
+    ]
+}
