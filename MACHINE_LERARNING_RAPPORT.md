@@ -55,20 +55,22 @@ För att driftsätta modellen finns det en väldigt användbar plattform vid nam
 På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera en enkel webapp. 
 
 
-https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4
 
 
- 
+ <video width="320" height="240" controls>
+  <source src="https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4
+" type="video/mp4">
+</video>
 
-https://www.zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
+zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
 
-https://www.scaler.com/topics/pandas/datasets-in-pandas/ 
+scaler.com/topics/pandas/datasets-in-pandas/ 
 
-https://towardsdatascience.com/what-i-learned-setting-up-storage-for-a-machine-learning-project-7ae1e5668762 
+towardsdatascience.com/what-i-learned-setting-up-storage-for-a-machine-learning-project-7ae1e5668762 
 
-https://towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a89dc2 
+towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a89dc2 
 
-https://medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
+medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
 
  
 
