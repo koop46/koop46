@@ -1,6 +1,6 @@
 # Machine Learning: Linjär regression 
 
-Dom vanligaste stegen i maskininlärningsalgoritmen linjär regression är åtta stycken: 
+Dom vanligaste stegen i maskininlärningsalgoritmen linjär regression är sex stycken: 
 
 1) Insamling & lagring av data 
 2) Visualisering & utforskning (EDA) 
@@ -44,7 +44,7 @@ Tänk nu att en sån här linjär regressionsmodell tränas med tusentals huspri
 
 Men det kan också uppstå fel i prediktionen, hus kan varderas för högt eller för lågt beroende på dess parametrarna (w) och (b), alltså begynnelsepris och ökningen i pris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Kostnadsfunktionen mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; summera allt och delar denna summa på antalet träningsset gånger 2. Detta kallas squared error cost function: 
 
-‘( y^(i) – y(i) )**2 
+J(w,b) = $\frac{1}{2m} \Sigma_{i=1}^{m} (\hat{y}^i, y^i)^2$
 
  
 
