@@ -56,7 +56,7 @@ På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera
 
 
 
-[![Watch the video](https://img.youtu.be/8M20LyCZDOY?si=jz_Yl3Fyw2hwJ0sB/default.jpg)](https://youtu.be/8M20LyCZDOY?si=jz_Yl3Fyw2hwJ0sB)
+[![Watch the video](https://img.youtube.com/8M20LyCZDOY?si=jz_Yl3Fyw2hwJ0sB/default.jpg)](https://youtube.com/8M20LyCZDOY?si=jz_Yl3Fyw2hwJ0sB)
 
 
 
