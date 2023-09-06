@@ -15,18 +15,21 @@ import sqlite3
 cnx = st.experimental_connection('incomes_db', type='sql')
 
 #income tables
-MAIN_DF = pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
+incomes = cnx.query("SELECT * FROM incomes").set_index(['index'])
+MAIN_DF = st.dataframe(incomes)
 
-MEN_DF_ = pd.read_sql_query("SELECT * FROM incomes_m", cnx).set_index(['index'])
+#pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
 
-WOMEN_DF = pd.read_sql_query("SELECT * FROM incomes_w", cnx).set_index(['index'])
+#MEN_DF_ = pd.read_sql_query("SELECT * FROM incomes_m", cnx).set_index(['index'])
+
+#WOMEN_DF = pd.read_sql_query("SELECT * FROM incomes_w", cnx).set_index(['index'])
 
 #median tables
-MEDIAN_DF = pd.read_sql_query("SELECT * FROM medians", cnx).set_index(['index'])
+#MEDIAN_DF = pd.read_sql_query("SELECT * FROM medians", cnx).set_index(['index'])
 
-MEDIAN_DF_M = pd.read_sql_query("SELECT * FROM median_m", cnx).set_index(['index'])
+#MEDIAN_DF_M = pd.read_sql_query("SELECT * FROM median_m", cnx).set_index(['index'])
 
-MEDIAN_DF_W = pd.read_sql_query("SELECT * FROM median_w", cnx).set_index(['index'])
+#MEDIAN_DF_W = pd.read_sql_query("SELECT * FROM median_w", cnx).set_index(['index'])
 
 
 ##########################################################
