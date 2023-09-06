@@ -54,6 +54,10 @@ J(w,b) = $\frac{1}{2m} \Sigma_{i=1}^{m} (\hat{y}^i - y^i)^2$
 För att driftsätta modellen finns det en väldigt användbar plattform vid namn Streamlit. 
 På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera en enkel webapp. 
 
+
+https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4
+
+
  
 
 https://www.zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
