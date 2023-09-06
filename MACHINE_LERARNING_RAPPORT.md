@@ -56,7 +56,9 @@ På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8M20LyCZDOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+{% include youtube.html id="8M20LyCZDOY" %}  
 
 
 
