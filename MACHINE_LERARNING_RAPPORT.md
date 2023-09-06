@@ -11,7 +11,7 @@ Dom vanligaste stegen i maskininlärningsalgoritmen linjär regression är åtta
 
  
 
-Insamling & lagring av data 
+### Insamling & lagring av data 
 
 Data kan samlas in på många olika sätt, men det enklaste är nog att ta ladda ner färdiga dataset från större fastihetshemsidor. Beroende på källa kan dataseten innehålla irrelevant data, som behöver elimineras under bearbetingen, eller föråldrad data. Bästa data går nog att samla från fastighetsägarna själva. Om du väljer att samla in själv så avgör du formatet för datan, annars brukar datan sammanställas i tabeller med format som CSV (comma-separated values), JSON(JavaScript Object Notation) eller XLSX/XLS som är standardformatet för Microsoft Excel.  
 Beroende på datasetets storlek kan det räcka med en SQL databas på hårddisken, USB sticka eller molnet för lagring. För lite större dataset hade nog en egen databas fungerat bättre. 
@@ -24,13 +24,13 @@ Efter datan är säkrad vill man nog visualisera den. Enklast går det att göra
 
  
 
-Visualisering & utforskning (EDA) 
+### Visualisering & utforskning (EDA) 
 
-Bearbetning av data 
+### Bearbetning av data 
 
 Kolla missing values,  
 
-Model & träning 
+### Model & träning 
 
 Linjär regression är en teknik för att prediktiv analys, alltså för att förutspå värden. Det funkar som så att värden matas in i en linjär regressionsalgoritm, i detta fall huspriser och, för enkelhetens skull, kvadratstorlek på hus. Algoritmen genererar en graf med x världen (kvadratstorlek) och y värden (huspris) och en linje, precis som en linjär ekvation. På grafen går det då att se sambandet att ju större storlek på huset desto högre är priset. Lutningen(w) på linjen representerar hur mycket priset ökar per 10 kvadratmeter, och skärningen i y-axeln (b) var priset börjar. 
 
@@ -38,7 +38,7 @@ Linjär regression är en teknik för att prediktiv analys, alltså för att fö
 
 Tänk nu att en sån här linjär regressionsmodell tränas med tusentals huspriser och respektive egenskaper eller features som det kallas. Storlek på rum, geografisk position, ålder på fastighet etcetera. Vi får då en modell med väldigt hög precision i att förutspå pris på ett hus med givna egenskaper. Ungefär som en väldigt erfaren mäklare.  
 
-Test & utvärdering 
+### Test & utvärdering 
 
  
 
@@ -48,7 +48,7 @@ Men det kan också uppstå fel i prediktionen, hus kan varderas för högt eller
 
  
 
-Driftsättning 
+### Driftsättning 
 
 För att driftsätta modellen finns det en väldigt användbar plattform vid namn Streamlit. 
 På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera en enkel webapp. 
