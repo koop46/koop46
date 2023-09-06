@@ -1,16 +1,13 @@
-### Machine Learning: Linjär regression 
+# Machine Learning: Linjär regression 
 
 Dom vanligaste stegen i maskininlärningsalgoritmen linjär regression är åtta stycken: 
 
-# 1) Insamling & lagring av data 
+## 1) Insamling & lagring av data 
 ## 2) Visualisering & utforskning (EDA) 
-
-3) Bearbetning av data
-
-4) Model & träning 
-5) Test & utvärdering  
-
-6) Driftsättning
+## 3) Bearbetning av data
+## 4) Model & träning 
+## 5) Test & utvärdering  
+## 6) Driftsättning
 
  
 
