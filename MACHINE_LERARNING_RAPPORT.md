@@ -55,7 +55,7 @@ För att driftsätta modellen finns det en väldigt användbar plattform vid nam
 På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera en enkel webapp. 
 
 
-<video src="https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4" width="WIDTH" height="HEIGHT" controls></video>
+<video src="https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4" width="300" height="200" controls></video>
 
 
 
