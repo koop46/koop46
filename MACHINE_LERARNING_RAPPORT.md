@@ -2,18 +2,15 @@
 
 Dom vanligaste stegen i maskininlärningsalgoritmen linjär regression är åtta stycken: 
 
-1) Insamling av data 
-2) Visualisering – EDA 
+# 1) Insamling & lagring av data 
+## 2) Visualisering & utforskning (EDA) 
 
-3) Bearbetning av dat 
+3) Bearbetning av data
 
-4) Val & träning av modell 
-5) Uppdelning av data 
+4) Model & träning 
+5) Test & utvärdering  
 
-Testa 
-Utvärdera modellen 
-
-Deploy 
+6) Driftsättning
 
  
 
