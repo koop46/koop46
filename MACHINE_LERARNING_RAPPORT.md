@@ -56,9 +56,8 @@ På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera
 
 
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8M20LyCZDOY/0.jpg)](https://www.youtube.com/watch?v=8M20LyCZDOY)
 
-
-{% include youtube.html id="8M20LyCZDOY" %}  
 
 
 
