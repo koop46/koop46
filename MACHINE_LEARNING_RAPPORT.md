@@ -39,7 +39,9 @@ Modellen vi kommer använda oss av är Linjär regression, en teknik för att pr
 
 $y = Wx + b$
 
-[insert graph] 
+![Graf](https://github.com/koop46/koop46/blob/main/output.png?raw=true)
+
+
 
 Tänk nu att en sån här linjär regressionsmodell tränas med tusentals huspriser och respektive egenskaper eller features som det kallas. Storlek på rum, geografisk position, ålder på fastighet etcetera. Vi får då en modell med väldigt hög precision i att förutspå pris på ett hus med givna egenskaper. Ungefär som en väldigt erfaren mäklare.  
 
