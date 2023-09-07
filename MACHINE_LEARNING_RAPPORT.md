@@ -30,8 +30,7 @@ Test set brukar utgöra 20% av totala datan, resten används för att träna mod
 ### Utforskning & förbehandling datan
 Sen är det dags att utforska datan genom att visualisera. Dels för att få djupare insikt, dels för att se om du kan upptäcka samband i grafiken. Två bibliotek för att visualisera data är Matplotlib och Seaborn. Bibliteket Pandas har bra verktyg för den uppgiften. Beroende på källa kan dataseten innehålla irrelevant data eller föråldrad data som behöver bearbetas. Pandasbiblioteket hjälper oss med allt från att inkludera eller exkludera vissa värden eller features modellen kommer utgå ifrån. Till att ersätta eller eliminera saknade värden och att koda textdata till sifferdata.
 
-[Insert graph??] 
-
+![Graf](https://github.com/koop46/koop46/blob/main/output.png?raw=true)
 
 ### Model & träning 
 
