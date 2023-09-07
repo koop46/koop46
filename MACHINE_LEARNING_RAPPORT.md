@@ -34,7 +34,8 @@ Sen är det dags att utforska datan genom att visualisera. Dels för att få dju
 ![Graf](https://github.com/koop46/koop46/blob/main/output1.png?raw=true)
 
 ### Model & träning 
-Linjär regression är en maskininlärningsmodell för prediktiv analys, för att förutspå värden. Den klassas som supervised learning då modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, lutning, som bäst beskriver samabndet. Resultatet kan visualiseras som en grafen med beroende variabeln i x-led (storlek) och oberoende i y-led(förutspått huspris). Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
+Nu är det dags att träna modellen och vi valde en linjär regression modell. Linjär regression är en modell för prediktiv analys, för att förutspå värden och klassas som supervised learning. Det innebär att modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, en lutning, som bäst beskriver sambandet. Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
+Resultatet kan visualiseras som en graf:
 
 
 $y = Wx + b$
