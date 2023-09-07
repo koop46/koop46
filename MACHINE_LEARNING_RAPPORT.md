@@ -23,21 +23,21 @@ I så fall kanske en annan modell lämpar sig bättre.
 ### Insamling & lagring av data
 
 Data kan samlas in på många olika sätt, det enklaste är större etablablerade hemsidor som oftast erbjuder färdiga dataset. Bäst data samlas nog från fastighetsbyråer själva. Fördelen med färdiga dataset är att dom kan innehålla features man inte trodde påverkade priset. Färdiga dataset brukar också komma i format som CSV (comma-separated values), JSON(JavaScript Object Notation) eller XLSX/XLS som är standardformatet för Microsoft Excel. Beroende på datasetets storlek kan det räcka med en Excel fil, speciellt då Python kod numera går att köra direkt i filen. För lite större data är nog en SQL databas mer lämplig. Och helst att lagra den på molnet.
-Här kan det vara bra att ta en snabb titt på datans dimensioner, det gör vi först genom att öppna datan i en dataframe med hjälp av Pandas biblioteket. `df = pandas.read_sql('huspriser.db')` om datan är i SQL format eller `df = pandas.read_excel('huspriser.xlsx')` det är excel format. Sen kan vi tillämpa metoderna:
-`df.head()`, `df.describe()`, `df.head()` och `df.info()`. Det är också bra att skapa ett test set här då den korta överblicken kan leda till _data snooping bias_.
+Här kan det vara bra att ta en snabb titt på datans dimensioner, det gör vi först genom att öppna datan i en dataframe med hjälp av Pandas biblioteket. `df = pandas.read_sql('huspriser.db')` om datan är i SQL format eller `df = pandas.read_excel('huspriser.xlsx')` det är excel format. Det är också bra att skapa ett test set här då den korta överblicken kan leda till _data snooping bias_.
+Test set brukar utgöra 20% av totala datan, resten används för att träna modellen. Data i seten ska också vara slumpmässig, biblioteket numpy har funktioner för att skriva en funktion som randomiserar set.
+***ändra format
 
 ### Utforskning & förbehandling datan
-Beroende på källa kan dataseten innehålla irrelevant data, som behöver elimineras under bearbetingen, eller föråldrad data. 
-Efter datan är säkrad vill man nog visualisera den. Enklast går det att göra med hjälp av Python biblioteken Matplotlib (as plt) eller det senare Seaborn (as sns). Det kan se ut såhär: 
+Sen är det dags att utforska datan genom att visualisera. Dels för att få djupare insikt, dels för att se om du kan upptäcka samband i grafiken. Två bibliotek för att visualisera data är Matplotlib och Seaborn. Bibliteket Pandas har bra verktyg för den uppgiften. Beroende på källa kan dataseten innehålla irrelevant data eller föråldrad data som behöver bearbetas. Pandasbiblioteket hjälper oss med allt från att inkludera eller exkludera vissa värden eller features modellen kommer utgå ifrån. Till att ersätta eller eliminera saknade värden och att koda textdata till sifferdata.
 
-[Insert graph] 
+[Insert graph??] 
 
-
-Kolla missing values,  
 
 ### Model & träning 
 
-Linjär regression är en teknik för att prediktiv analys, alltså för att förutspå värden. Det funkar som så att värden matas in i en linjär regressionsalgoritm, i detta fall huspriser och, för enkelhetens skull, kvadratstorlek på hus. Algoritmen genererar en graf med x världen (kvadratstorlek) och y värden (huspris) och en linje, precis som en linjär ekvation. På grafen går det då att se sambandet att ju större storlek på huset desto högre är priset. Lutningen(w) på linjen representerar hur mycket priset ökar per 10 kvadratmeter, och skärningen i y-axeln (b) var priset börjar. 
+Modellen vi kommer använda oss av är Linjär regression, en teknik för att prediktiv analys. Alltså för att förutspå värden. Den funkar som så att ett antal värden matas in i en linjär regressionsalgoritm, för enkelhetens skull huspriser och kvadratstorlek. Algoritmen tränas genom att mata kvadratstorlek och huspris för att producerar en linjär ekvation som går att visualisera i en graf. På grafen syns sambandet mellan variablerna tillsammans med en linje, lutningen(W), som förhoppningsvis visar ökningen i priset per kvadratmeter, och skärningen i y-axeln (b) var priset börjar. 
+
+$y = Wx + b$
 
 [insert graph] 
 
