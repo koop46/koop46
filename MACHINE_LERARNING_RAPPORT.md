@@ -25,7 +25,7 @@ I så fall kanske en annan modell lämpar sig bättre.
 
 Data kan samlas in på många olika sätt, det enklaste är större etablablerade hemsidor som oftast erbjuder färdiga dataset. Bäst data samlas nog från fastighetsbyråer själva. Fördelen med färdiga dataset är att dom kan innehålla features man inte trodde påverkade priset. Färdiga dataset brukar också komma i format som CSV (comma-separated values), JSON(JavaScript Object Notation) eller XLSX/XLS som är standardformatet för Microsoft Excel. Beroende på datasetets storlek kan det räcka med en Excel fil, speciellt då Python kod numera går att köra direkt i filen. För lite större data är nog en SQL databas mer lämplig. Och helst att lagra den på molnet.
 Här kan det vara bra att ta en snabb titt på datans dimensioner med metoderna:
-`.head(), .describe(), .head() och .info()`
+`.head()`, `.describe()`, `.head()` och `.info()`
 
 ### Utforskning & förbehandling datan
 Men Beroende på källa kan dataseten innehålla irrelevant data, som behöver elimineras under bearbetingen, eller föråldrad data. 
