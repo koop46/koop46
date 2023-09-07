@@ -41,11 +41,11 @@ $y = Wx + b$
 
 ### Test & utvärdering 
 
-Men det kan också uppstå fel i prediktionen, hus kan värderas för högt (overfiting) eller för lågt (underfiting) beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Det finns flera kostnadsfunktioner, men vi har valt Root Mean Square Error (RMSE). RMSE mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; delar summan av alla träningssett på antalet träningsset och beräknar roten ur denna kvot. 
+Men det kan också uppstå fel i prediktionen, hus kan värderas för högt (overfiting) eller för lågt (underfiting) beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Det finns flera kostnadsfunktioner, men vi har valt Root Mean Square Error (RMSE). RMSE mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; delar summan av alla träningsexempel på antalet exempel och beräknar roten ur denna kvot. 
 
 RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h(x^i) - y^i)^2}$
 
- 
+Med andra ord så räknar den ut den genomsnittliga skillnaden i avstånd mellan predikerade och faktiska värden. 
 
 ### Driftsättning 
 
