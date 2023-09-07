@@ -24,10 +24,10 @@ I så fall kanske en annan modell lämpar sig bättre.
 
 Data kan samlas in på många olika sätt, det enklaste är större etablablerade hemsidor som oftast erbjuder färdiga dataset. Bäst data samlas nog från fastighetsbyråer själva. Fördelen med färdiga dataset är att dom kan innehålla features man inte trodde påverkade priset. Färdiga dataset brukar också komma i format som CSV (comma-separated values), JSON(JavaScript Object Notation) eller XLSX/XLS som är standardformatet för Microsoft Excel. Beroende på datasetets storlek kan det räcka med en Excel fil, speciellt då Python kod numera går att köra direkt i filen. För lite större data är nog en SQL databas mer lämplig. Och helst att lagra den på molnet.
 Här kan det vara bra att ta en snabb titt på datans dimensioner, det gör vi först genom att öppna datan i en dataframe med hjälp av Pandas biblioteket. `df = pandas.read_sql('huspriser.db')` om datan är i SQL format eller `df = pandas.read_excel('huspriser.xlsx')` det är excel format. Sen kan vi tillämpa metoderna:
-`df.head()`, `df.describe()`, `df.head()` och `df.info()`
+`df.head()`, `df.describe()`, `df.head()` och `df.info()`. Det är också bra att skapa ett test set här då den korta överblicken kan leda till _data snooping bias_.
 
 ### Utforskning & förbehandling datan
-Men Beroende på källa kan dataseten innehålla irrelevant data, som behöver elimineras under bearbetingen, eller föråldrad data. 
+Beroende på källa kan dataseten innehålla irrelevant data, som behöver elimineras under bearbetingen, eller föråldrad data. 
 Efter datan är säkrad vill man nog visualisera den. Enklast går det att göra med hjälp av Python biblioteken Matplotlib (as plt) eller det senare Seaborn (as sns). Det kan se ut såhär: 
 
 [Insert graph] 
