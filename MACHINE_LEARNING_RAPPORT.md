@@ -34,7 +34,7 @@ Sen är det dags att utforska datan genom att visualisera. Dels för att få dju
 ![Graf](https://github.com/koop46/koop46/blob/main/output1.png?raw=true)
 
 ### Model & träning 
-Linjär regression är en teknik för prediktiv analys, för att förutspå värden. Träningsetet matas in i algoritmen som producerar en linjär ekvation. Ekvationen kan visualiseras som en grafen för att synliggöra sambandet mellan beroende variabeln i x-led (storlek) och oberoende i y-led(förutspått huspris). Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
+Linjär regression är en maskininlärningsmodell för prediktiv analys, för att förutspå värden. Den klassas som supervised learning då modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, lutning, som bäst beskriver samabndet. Resultatet kan visualiseras som en grafen med beroende variabeln i x-led (storlek) och oberoende i y-led(förutspått huspris). Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
 
 
 $y = Wx + b$
@@ -46,7 +46,7 @@ $y = Wx + b$
 
  
 
-Men det kan också uppstå fel i prediktionen, hus kan varderas för högt eller för lågt beroende på dess parametrarna (w) och (b), alltså begynnelsepris och ökningen i pris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Kostnadsfunktionen mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; summera allt och delar denna summa på antalet träningsset gånger 2. 
+Men det kan också uppstå fel i prediktionen, hus kan värderas för högt eller för lågt beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Kostnadsfunktionen mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; summera allt och delar denna summa på antalet träningsset gånger 2. 
 Detta kallas squared error cost function: 
 
 
