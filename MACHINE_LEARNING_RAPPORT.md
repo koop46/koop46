@@ -74,7 +74,7 @@ towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a8
 
 medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
 
-https://www.analyticsvidhya.com/blog/2021/10/everything-you-need-to-know-about-linear-regression/#:~:text=Linear%20regression%20is%20a%20quiet,%2Daxis%2C%20called%20linear%20regression.
+analyticsvidhya.com/blog/2021/10/everything-you-need-to-know-about-linear-regression/#:~:text=Linear%20regression%20is%20a%20quiet,%2Daxis%2C%20called%20linear%20regression.
 
 
  
