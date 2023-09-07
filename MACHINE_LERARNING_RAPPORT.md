@@ -13,7 +13,7 @@ Dom vanligaste stegen i maskininlärningsalgoritmen är sex stycken:
 Första steget i ett maskininlärnings- eller deep learningsprojekt är att svara på frågan: Vad har projektet för ändamål? Svaret låter oss bättre välja algoritm och prestationsmått samt tid vi lägger på att justera modellen. Eftersom vi vet att vi vill förutspå huspriser baserat på features så vet vi att vi behöver använda en linjär regressions modell.
 För att mäta prestation är ett sedvanligt prestationsmått Root Mean Square Error(RMSE):
 
-RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h\x^(i) - y^(i))^2}$
+RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h(x^(i)) - y^(i))^2}$
 
 En formel som mäter hur långt ifrån faktiska priset som modellens prediktioner kommer hamna.
 
