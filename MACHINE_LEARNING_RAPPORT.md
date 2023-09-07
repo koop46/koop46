@@ -11,11 +11,7 @@ Dom vanligaste stegen i maskininlärningsalgoritmen är sex stycken:
 
 ### Ändamål
 Första steget i ett maskininlärnings- eller deep learningsprojekt är att svara på frågan: Vad har projektet för ändamål? Svaret låter oss bättre välja algoritm och prestationsmått samt tid vi lägger på att justera modellen. Eftersom vi vet att vi vill förutspå huspriser baserat på features så vet vi att vi behöver använda en linjär regressions modell.
-För att mäta prestation är ett sedvanligt prestationsmått Root Mean Square Error(RMSE):
 
-RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h(x^i) - y^i)^2}$
-
-En formel som mäter hur långt ifrån faktiska priset som modellens prediktioner kommer hamna.
 Sen är frågan om resultatet av denna modell är den slutgiltiga produkten eller om det ska användas som data i ytterliggar en modell.
 I så fall kanske en annan modell lämpar sig bättre.
 
@@ -34,7 +30,7 @@ Sen är det dags att utforska datan genom att visualisera. Dels för att få dju
 ![Graf](https://github.com/koop46/koop46/blob/main/output1.png?raw=true)
 
 ### Model & träning 
-Nu är det dags att träna modellen och vi valde en linjär regression modell. Linjär regression är en modell för prediktiv analys, för att förutspå värden och klassas som supervised learning. Det innebär att modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, en lutning, som bäst beskriver sambandet. Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
+Nu är det dags att träna modellen, i detta fall en linjär regression modell. Linjär regression är en modell för prediktiv analys, alltså förutspå värden, och klassas som supervised learning. Det innebär att modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, en lutning, som bäst beskriver sambandet. Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
 Resultatet kan visualiseras som en graf:
 
 
@@ -45,11 +41,9 @@ $y = Wx + b$
 
 ### Test & utvärdering 
 
- 
+Men det kan också uppstå fel i prediktionen, hus kan värderas för högt (overfiting) eller för lågt (underfiting) beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Det finns flera kostnadsfunktioner, men vi har valt Root Mean Square Error (RMSE). RMSE mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; delar summan av alla träningssett på antalet träningsset och beräknar roten ur denna kvot. 
 
-Men det kan också uppstå fel i prediktionen, hus kan värderas för högt eller för lågt beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Kostnadsfunktionen mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; summera allt och delar denna summa på antalet träningsset gånger 2. 
-Detta kallas squared error cost function: 
-
+RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h(x^i) - y^i)^2}$
 
  
 
