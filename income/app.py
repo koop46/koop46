@@ -12,11 +12,13 @@ from streamlit_gsheets import GSheetsConnection
 #SQL
 ##########################################################
 
-cnx = st.experimental_connection('incomes_db', type='sql')
+url = "https://docs.google.com/spreadsheets/d/118AeMVlvvmBsFmgv4FxURnZEs2pn_nKRGZqgniMaf2c/edit?usp=sharing"
 
-#income tables
-incomes = cnx.query("SELECT * FROM incomes").set_index(['index'])
-MAIN_DF = st.dataframe(incomes)
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+
+data = conn.read(spreadsheet=url, col=[0,1])
+
+st.dataframe(data)
 
 #pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
 
@@ -61,7 +63,7 @@ def income_class(monthly_income):
 ##########################################################
 #Streamlit
 ##########################################################
-
+MAIN_DF = pd.DataFrame()
 
 header = st.container()
 body = st.container()
