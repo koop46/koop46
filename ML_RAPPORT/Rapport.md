@@ -50,7 +50,7 @@ Till sist testar vi modellen på dom återstående 20% av datan. Här finns äve
 
 ### Driftsättning 
 
-Slutligen vill vi driftsätta modellen. För det finns det olika plattformar som till exempel Amazon Web Service (AWS) eller Google Cloud AI. Det går även att driftsätta den från en egen server. För lite enklare ML modeller kan Streamlit plattformen fungera ganska bra. 
+Slutligen vill vi driftsätta modellen. För det finns det olika plattformar som till exempel Amazon Web Service (AWS), Google Cloud AI eller Azure ML. Det går även att driftsätta den från en egen server. För lite enklare ML modeller kan Streamlit plattformen fungera ganska bra. 
 På Streamlit kan man bygga en enkel frontend med deras Streamlit bibliotek, ladda upp sitt script och lansera sin modell.
 
 
