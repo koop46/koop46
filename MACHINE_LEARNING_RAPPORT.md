@@ -61,14 +61,14 @@ På Streamlit kan man bygga en enkel frontend med deras Streamlit bibliotek, lad
 
 ## Källor
 
-zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
-scaler.com/topics/pandas/datasets-in-pandas/ 
-towardsdatascience.com/what-i-learned-setting-up-storage-for-a-machine-learning-project-7ae1e5668762 
-towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a89dc2 
-medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
-analyticsvidhya.com/blog/2021/10/everything-you-need-to-know-about-linear-regression/#:~:text=Linear%20regression%20is%20a%20quiet,%2Daxis%2C%20called%20linear%20regression.
-w3schools.com/python/pandas/pandas_cleaning_wrong_format.asp
-projectpro.io/article/machine-learning-model-deployment/872#:~:text=You%20can%20deploy%20machine%20learning,time%20inference%20at%20the%20edge.
-stackoverflow.blog/2020/10/12/how-to-put-machine-learning-models-into-production/
-projectpro.io/article/machine-learning-model-deployment/872#:~:text=You%20can%20deploy%20machine%20learning,time%20inference%20at%20the%20edge.
-
+- zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
+- scaler.com/topics/pandas/datasets-in-pandas/ 
+- towardsdatascience.com/what-i-learned-setting-up-storage-for-a-machine-learning-project-7ae1e5668762 
+- towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a89dc2 
+- medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
+- analyticsvidhya.com/blog/2021/10/everything-you-need-to-know-about-linear-regression/#:~:text=Linear%20regression%20is%20a%20quiet,%2Daxis%2C%20called%20linear%20regression.
+- w3schools.com/python/pandas/pandas_cleaning_wrong_format.asp
+- projectpro.io/article/machine-learning-model-deployment/872#:~:text=You%20can%20deploy%20machine%20learning,time%20inference%20at%20the%20edge.
+- stackoverflow.blog/2020/10/12/how-to-put-machine-learning-models-into-production/
+- projectpro.io/article/machine-learning-model-deployment/872#:~:text=You%20can%20deploy%20machine%20learning,time%20inference%20at%20the%20edge.
+- ChatGPT
