@@ -24,7 +24,6 @@ Beroende på datasetets storlek kan en Excel fil räcka som lagring. För lite s
 Efter att datan är införskaffad kan det vara bra att ta en snabb titt på datans dimensioner, det gör vi först genom att öppna datan i en dataframe med hjälp av Pandas biblioteket. Det är också bra att åsido sätta 20% av datan till träningsset, då den korta överblicken kan leda till _data snooping bias_.
 Resten av datan blir tränings set för modellen. Data i seten ska också vara slumpmässig. Biblioteket numpy har funktioner för att skriva en funktion som randomiserar datan.
 
-• beskriv hur man kan göra för att bearbeta datan till rätt format?
 
 ### Utforskning & förbehandling datan
 Sen är det dags att utforska datan genom att visualisera den. Dels för att få djupare insikt, dels för att se om du kan upptäcka samband i grafiken. Två bibliotek för att visualisera data är Matplotlib och Seaborn. Beroende på källa kan dataseten innehålla irrelevant data eller föråldrad data som behöver förarbetas. Pandas biblioteket hjälper oss med allt från att inkludera/exkludera värden till att eliminera/ersätta saknade värden. Det går även att ändra format på data genom att koda textdata till sifferdata, ändra en hel kolumn till samma format eller bara ta bort kolumnen. En sekvens som förbehandlar data kallas för en pipeline och biblioteket SciKit-Learn har bra moduler för att skapa pipelines.
