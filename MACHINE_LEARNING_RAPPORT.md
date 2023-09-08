@@ -22,15 +22,14 @@ Data kan samlas in på många olika sätt, det enklaste är större etablablerad
 Här kan det vara bra att ta en snabb titt på datans dimensioner, det gör vi först genom att öppna datan i en dataframe med hjälp av Pandas biblioteket. `df = pandas.read_sql('huspriser.db')` om datan är i SQL format eller `df = pandas.read_excel('huspriser.xlsx')` det är excel format. Det är också bra att skapa ett test set här då den korta överblicken kan leda till _data snooping bias_.
 Test set brukar utgöra 20% av totala datan, resten av datan blir tränings set för modellen. Data i seten ska också vara slumpmässig, biblioteket numpy har funktioner för att skriva en funktion som randomiserar set.
 
-***ändra format
 
 ### Utforskning & förbehandling datan
-Sen är det dags att utforska datan genom att visualisera. Dels för att få djupare insikt, dels för att se om du kan upptäcka samband i grafiken. Två bibliotek för att visualisera data är Matplotlib och Seaborn. Bibliteket Pandas har bra verktyg för den uppgiften. Beroende på källa kan dataseten innehålla irrelevant data eller föråldrad data som behöver bearbetas. Pandasbiblioteket hjälper oss med allt från att inkludera eller exkludera vissa värden eller features modellen kommer utgå ifrån. Till att ersätta eller eliminera saknade värden och att koda textdata till sifferdata. En sekvens steg som förbehandlar data kallas för en pipeline. Biblioteket SciKit-Learn har bra moduler för att skapa pipelines.
+Sen är det dags att utforska datan genom att visualisera. Dels för att få djupare insikt, dels för att se om du kan upptäcka samband i grafiken. Två bibliotek för att visualisera data är Matplotlib och Seaborn. Bibliteket Pandas har bra verktyg för den uppgiften. Beroende på källa kan dataseten innehålla irrelevant data eller föråldrad data som behöver bearbetas. Pandas biblioteket hjälper oss med allt från att inkludera/exkludera värden till att eliminera/ersätta saknade värden samt ändra format på data genom att koda textdata till sifferdata eller ändra datatyp. En sekvens steg som förbehandlar data kallas för en pipeline. Biblioteket SciKit-Learn har bra moduler för att skapa pipelines.
 
 ![Graf](https://github.com/koop46/koop46/blob/main/output1.png?raw=true)
 
-### Model & träning 
-Nu är det dags att träna modellen, i detta fall en linjär regression modell. Linjär regression är en modell för prediktiv analys, alltså förutspå värden, och klassas som supervised learning. Det innebär att modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, en lutning, som bäst beskriver sambandet. Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
+### Model & träning
+Nu är det dags att träna linjär regression modellen. Linjär regression är en teknik för prediktiv analys, alltså för att förutspå värden, och klassas som supervised learning. Det innebär att modellen tränas på datapunkter (input) med respektive labels (output). Modellen beräknar sambandet mellan punkterna och producerar en linje, en lutning som beskriver sambandet. I detta fall hur mycket huspriset ökar ju mer storleke på huset ökar. Det är detta linjära samband som kallas linjär regression och träningen av modellen sker med hjälp av SciKit-Learn.
 Resultatet kan visualiseras som en graf:
 
 
@@ -38,14 +37,15 @@ $y = Wx + b$
 
 ![Graf](https://github.com/koop46/koop46/blob/main/output.png?raw=true)
 
+Träningen sker på dom 20% vi åsidosatte i början och träningen kan ta en stund att genomföra beroende på storlek och processkapacitet. Det är under träningsfasen algoritmen också använder sig av kostnadsfuntionen. Den vi har valt är Root Mean Square Error (RMSE). RMSE mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; delar summan av alla träningsexempel på antalet exempel och beräknar roten ur denna kvot. Modellen finjusterar sedan sig för att minska kostnadsfunktionen så mycket som möjligt. På så sätt minskar vi risken att värdera hus för högt (overfiting) eller för lågt (underfiting).
 
-### Test & utvärdering 
-
-Men det kan också uppstå fel i prediktionen, hus kan värderas för högt (overfiting) eller för lågt (underfiting) beroende på dess parametrarna (w) och (b), alltså ökningen i pris och begynnelsepris. Ett sätt att minska felmarginalen är med hjälp av en kostnadsfunktion. Det finns flera kostnadsfunktioner, men vi har valt Root Mean Square Error (RMSE). RMSE mäter felmarginalen genom att kvadrera differensen mellan det prediktiva värdet och det faktiska värdet i vartenda träningsexempel; delar summan av alla träningsexempel på antalet exempel och beräknar roten ur denna kvot. 
 
 RMSE(X,h) = $\sqrt{\frac{1}{m} \Sigma_{i=1}^{m} (h(x^i) - y^i)^2}$
 
-Med andra ord så räknar den ut den genomsnittliga skillnaden i avstånd mellan predikerade och faktiska värden. 
+### Test & utvärdering 
+
+cross
+
 
 ### Driftsättning 
 
@@ -58,18 +58,13 @@ På Streamlit kan man ladda upp sitt script, bygga en enkel frontend och lansera
 
 
 
+## Källor
 
 zenrows.com/blog/collecting-data-to-map-housing-prices#the-map 
-
 scaler.com/topics/pandas/datasets-in-pandas/ 
-
 towardsdatascience.com/what-i-learned-setting-up-storage-for-a-machine-learning-project-7ae1e5668762 
-
 towardsdatascience.com/the-complete-guide-to-linear-regression-analysis-38a421a89dc2 
-
 medium.com/analytics-vidhya/linear-regression-in-7-steps-b7362af795aa 
-
 analyticsvidhya.com/blog/2021/10/everything-you-need-to-know-about-linear-regression/#:~:text=Linear%20regression%20is%20a%20quiet,%2Daxis%2C%20called%20linear%20regression.
-
-
+w3schools.com/python/pandas/pandas_cleaning_wrong_format.asp
  

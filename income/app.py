@@ -5,7 +5,7 @@ income app
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-import sqlite3
+from streamlit_gsheets import GSheetsConnection
 
 
 ##########################################################
