@@ -5,20 +5,22 @@ income app
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-from streamlit_gsheets import GSheetsConnection
 
 
 ##########################################################
 #SQL
 ##########################################################
 
-url = "https://docs.google.com/spreadsheets/d/118AeMVlvvmBsFmgv4FxURnZEs2pn_nKRGZqgniMaf2c/edit?usp=sharing"
+import sqlite3
+import pandas as pd
 
-conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet=url, col=[0,1])
+cnx = sqlite3.connect('income\incomes_DB.db')
 
-st.dataframe(data)
+MAIN_DF = pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
+
+
+MAIN_DF
 
 #pd.read_sql_query("SELECT * FROM incomes", cnx).set_index(['index'])
 
