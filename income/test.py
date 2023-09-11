@@ -1,5 +1,9 @@
 import pandas as pd
 from pyscbwrapper import SCB
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 
 ##########################################################
@@ -23,9 +27,12 @@ scb.get_query()
 dataset = scb.get_data()
 
 
+
+
 ##########################################################
-# Data cleaning
+# Pre-process
 ##########################################################
+
 
 
 df = pd.DataFrame.from_dict(dataset['data'])
@@ -43,78 +50,81 @@ df = df.astype({"Amount_people":"int","Average_income":"float", "Median_income":
 
 
 
-JDF = df.iloc[4420:]
-MDF = df.iloc[:2210]
-WDF = df.iloc[2210:4420]
+JOINT_DF = df.iloc[4420:]
+MEN_DF = df.iloc[:2210]
+WOMEN_DF = df.iloc[2210:4420]
 
 
 
-###### Amount
-
-MAIN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
-
-for idx, col in enumerate(MAIN_DF):
-    column = JDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # All
-
-    MAIN_DF[col] = column.values
-
-MAIN_DF.loc['Summa'] = MAIN_DF.sum(axis = 0)
-MAIN_DF['Totala'] = MAIN_DF.sum(axis=1)
+########################################################################################## Amount
 
 
+AMOUNT_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
-MEN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
+for idx, col in enumerate(AMOUNT_DF):
+    column = JOINT_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # All
 
-for idx, col in enumerate(MEN_DF):
-  column = MDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # Men
-  MEN_DF[col] = column.values
+    AMOUNT_DF[col] = column.values
 
-MEN_DF.loc['Summa'] = MEN_DF.sum(axis = 0)
-MEN_DF['Totala'] = MEN_DF.sum(axis=1)
+AMOUNT_DF.loc['Summa'] = AMOUNT_DF.sum(axis = 0)
+AMOUNT_DF['Totala'] = AMOUNT_DF.sum(axis=1)
 
 
 
-WOMEN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
+MEN_AMOUNT_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
-for idx, col in enumerate(WOMEN_DF):
-  column = WDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # Women
-  WOMEN_DF[col] = column.values
+for idx, col in enumerate(MEN_AMOUNT_DF):
+  column = MEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # Men
+  MEN_AMOUNT_DF[col] = column.values
 
-WOMEN_DF.loc['Summa'] = WOMEN_DF.sum(axis = 0)
-WOMEN_DF['Totala'] = WOMEN_DF.sum(axis=1)
+MEN_AMOUNT_DF.loc['Summa'] = MEN_AMOUNT_DF.sum(axis = 0)
+MEN_AMOUNT_DF['Totala'] = MEN_AMOUNT_DF.sum(axis=1)
 
 
-###### Average
+
+WOMEN_AMOUNT_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
+
+for idx, col in enumerate(WOMEN_AMOUNT_DF):
+  column = WOMEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Amount_people") ] # Women
+  WOMEN_AMOUNT_DF[col] = column.values
+
+WOMEN_AMOUNT_DF.loc['Summa'] = WOMEN_AMOUNT_DF.sum(axis = 0)
+WOMEN_AMOUNT_DF['Totala'] = WOMEN_AMOUNT_DF.sum(axis=1)
+
+
+########################################################################################## Average
+
 
 AVERAGE_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
 for idx, col in enumerate(AVERAGE_DF):
-  column = JDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # All
+  column = JOINT_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # All
   AVERAGE_DF[col] = column.values
 
 
 
-MEN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
+MEN_AVERAGE_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
-for idx, col in enumerate(MEN_DF):
-  column = MDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # Men
-  MEN_DF[col] = column.values
-
-
-
-WOMEN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
-
-for idx, col in enumerate(WOMEN_DF):
-  column = WDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # Women
-  WOMEN_DF[col] = column.values
+for idx, col in enumerate(MEN_AVERAGE_DF):
+  column = MEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # Men
+  MEN_AVERAGE_DF[col] = column.values
 
 
-###### Median
+
+WOMEN_AVERAGE_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
+
+for idx, col in enumerate(WOMEN_AVERAGE_DF):
+  column = WOMEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Average_income") ] # Women
+  WOMEN_AVERAGE_DF[col] = column.values
+
+
+########################################################################################## Median
+
 
 MEDIAN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
 for idx, col in enumerate(MEDIAN_DF):
-  column = JDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # All
+  column = JOINT_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # All
   MEDIAN_DF[col] = column.values
 
 
@@ -122,7 +132,7 @@ for idx, col in enumerate(MEDIAN_DF):
 MEN_MEDIAN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
 for idx, col in enumerate(MEN_MEDIAN_DF):
-  column = MDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # Men
+  column = MEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # Men
   MEN_MEDIAN_DF[col] = column.values
 
 
@@ -130,12 +140,93 @@ for idx, col in enumerate(MEN_MEDIAN_DF):
 WOMEN_MEDIAN_DF = pd.DataFrame( columns = INCOME_CLASSES, index =  AGES )
 
 for idx, col in enumerate(WOMEN_MEDIAN_DF):
-  column = WDF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # Women
+  column = WOMEN_DF.iloc[ 85*idx : 85 + 85*idx, df.columns.get_loc("Median_income") ] # Women
   WOMEN_MEDIAN_DF[col] = column.values
 
 
+##########################################################
+# Functions
+##########################################################
 
 
+def income_class(monthly_income):
+
+  yearly_income = monthly_income * 12
+
+  if monthly_income == 0: income_interval = "0"        
+  elif monthly_income > 83: income_interval = "1000+ tkr"
+
+  else:
+      for col in INCOME_CLASSES[:, 1:-2]: #loop through column names / maybe switch to list with names?
+          income_range = col[:-4].split("-")
+
+          if int(income_range[0]) <= yearly_income <= int(income_range[1]):
+              income_interval = f"{income_range[0]}-{income_range[1]} tkr"
+              break
+
+  class_idx = AMOUNT_DF.columns.get_loc(income_interval) #return income class index
+  
+  return class_idx
+
+
+##########################################################
+#Streamlit
+##########################################################
+
+
+header = st.container()
+body = st.container()
+
+with header:
+
+  st.title("Antal per inkomstklass: Riket")
+
+  XX = WOMEN_AMOUNT_DF.iloc[-1, :-1]
+  XY = MEN_AMOUNT_DF.iloc[-1, :-1]
+  BARS = pd.concat([XX, XY], axis=1)
+  
+  fig = plt.figure (figsize=(16, 4) )
+  sns.set_style("darkgrid") #Size & style 
+  ax = BARS.plot(kind='bar', stacked=True, color=['plum', 'cornflowerblue'])
+  ax.set_yticklabels(["0", "200k", "400k", "600k", "800k", '1M', '1.2M'])
+  plt.legend([],[], frameon=False)
+
+  plt.gcf().set_facecolor('black') 
+  ax.tick_params(axis='x', colors='white')
+  ax.tick_params(axis='y', colors='white')
+
+
+  
+  st.pyplot(plt.gcf())
+
+
+with st.sidebar:
+  st.sidebar.subheader('Stats')
+
+  s_form = st.form("stats_form")
+  age = s_form.number_input("Ålder", step=1,min_value=16, max_value=100, value=35)
+  salary = s_form.number_input("Månadslön i tkr", format= "%.1f",
+                                step=.5,min_value=0.0, max_value=100.0, value=35.0)
+
+  if s_form.form_submit_button("Klicka"):
+      pass
+
+
+
+with body:
+  st.header(f"Födda -{2023-age-1900}, bruttosalary: {int(salary*1000):,} kr")
+
+
+  salary = float(salary)
+
+  if 16 <= age <= 100 and 1 <= salary <= 100:
+      pass
+
+
+
+      #stats(salary, age)
+    #  idx = salarye_index(salary)
+      # visualizations(age, salary, idx)
 
 
 
