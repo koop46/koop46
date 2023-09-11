@@ -1,5 +1,0 @@
-matplotlib==3.7.2
-pandas==2.0.3
-streamlit==1.25.0
-pyscbwrapper==0.1.1
-seaborn==0.12.2
