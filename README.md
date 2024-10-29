@@ -9,7 +9,7 @@
 
 
 
- ## Skills
+ ## Languages
 
 <a href="https://www.haskell.org/" target="_blank" rel="noreferrer noopener">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg" alt="Haskell" width="25" height="25" />
