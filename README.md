@@ -10,4 +10,16 @@
 
 
  ## Skills
-   <a href="https://www.python.org" target="_blank" rel="noreferrer noopener"><img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/python.svg" alt="Python" width="25" height="25" /></a> <a href="https://r-lang.com/what-is-r-language/" target="_blank" rel="noreferrer noopener"><img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/r.svg" alt="R" width="25" height="25" /></a>      
+
+<a href="https://www.haskell.org/" target="_blank" rel="noreferrer noopener">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/haskell/haskell-original.svg" alt="Haskell" width="25" height="25" />
+</a>
+<a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer noopener">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="Microsoft SQL Server" width="25" height="25" />
+</a>
+<a href="https://www.python.org" target="_blank" rel="noreferrer noopener">
+  <img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/python.svg" alt="Python" width="25" height="25" />
+</a>
+<a href="https://r-lang.com/what-is-r-language/" target="_blank" rel="noreferrer noopener">
+  <img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/r.svg" alt="R" width="25" height="25" />
+</a>
