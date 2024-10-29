@@ -18,8 +18,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="Microsoft SQL Server" width="25" height="25" />
 </a>
 <a href="https://www.python.org" target="_blank" rel="noreferrer noopener">
-  <img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/python.svg" alt="Python" width="25" height="25" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="25" height="25" />
 </a>
 <a href="https://r-lang.com/what-is-r-language/" target="_blank" rel="noreferrer noopener">
-  <img src="https://raw.githubusercontent.com/0xShapeShifter/readme-md/master/public/images/skills/core/r.svg" alt="R" width="25" height="25" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" width="25" height="25" />
 </a>
