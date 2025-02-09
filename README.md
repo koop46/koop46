@@ -1,5 +1,4 @@
 # Alejandro Martinez
-### AI & Machine Learning engineer just beginning my career
 
 
 
