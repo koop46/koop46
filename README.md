@@ -14,6 +14,7 @@ I have a bunch of small projects I've completed, both for school and hobby. Feel
 - [Cardio vascular diseas](https://github.com/koop46/ML_cardio_diseas_prediction)
 - [AI model gateway (DeepSeek, Llama 3.1, Llama3.2, Llama Nemotron )](https://github.com/koop46/deepseek_clone)
 - [AI-powered discord bot](https://github.com/koop46/AI_powered_discord_bot)
+- [Advertisement budget sales prediction](https://github.com/koop46/advertisement_budget_prediction)
 
 ### Software systems
 - [M10 digital infrastructure](https://github.com/koop46/M10_infrastructure)
