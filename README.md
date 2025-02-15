@@ -9,7 +9,7 @@
 Hi there and welcome to my repository. My name is Alejandor Martinez, a Computer Science student that loves to learn.  
 I have a bunch of small projects I've completed, both for school and hobby. Feel free to check them out:  
 
-### Machine Learning
+### Machine Learning & AI
 - [Movie recommendation system](https://github.com/koop46/Movie_recommendation_system)
 - [Cardio vascular diseas](https://github.com/koop46/ML_cardio_diseas_prediction)
 - [AI model gateway (DeepSeek, Llama 3.1, Llama3.2, Llama Nemotron )](https://github.com/koop46/deepseek_clone)
